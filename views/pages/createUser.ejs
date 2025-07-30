@@ -1,0 +1,46 @@
+<h1><%= title %></h1>
+
+<%- include("../partials/errors.ejs") %>
+
+<form action="/create" method="POST">
+  <label for="firstName">First Name</label>
+  <input
+    type="text"
+    id="firstName"
+    name="firstName"
+    value="<%= user?.firstName || '' %>"
+    required
+  />
+
+  <label for="lastName">Last Name</label>
+  <input
+    type="text"
+    id="lastName"
+    name="lastName"
+    value="<%= user?.lastName || '' %>"
+  />
+
+  <label for="email">Email</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    value="<%= user?.email || '' %>"
+    required
+  />
+
+  <label for="age">Age</label>
+  <input
+    type="number"
+    id="age"
+    name="age"
+    value="<%= user?.age || '' %>"
+    min="0"
+  />
+
+  <label for="bio">Bio</label>
+  <textarea id="bio" name="bio" rows="4"><%= user?.bio || '' %></textarea>
+
+  <button type="submit" class="primary">Submit</button>
+  <a role="button" href="/" class="secondary">Back to Home</a>
+</form>

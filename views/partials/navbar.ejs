@@ -1,0 +1,32 @@
+<!-- navbar.ejs -->
+<nav>
+  <ul>
+    <% for (let i = 0; i < links.length; i++) { %>
+    <li>
+      <a role="button" href="<%= links[i].href %>">
+        <span> <%= links[i].text %> </span>
+      </a>
+    </li>
+    <% } %>
+  </ul>
+
+  <ul>
+    <li>
+      <form action="/search" method="GET">
+        <div role="search" style="margin-bottom: 0">
+          <input
+            type="text"
+            id="query"
+            name="q"
+            placeholder="Name or Email..."
+            required
+          />
+          <button type="submit">Search</button>
+        </div>
+      </form>
+    </li>
+    <li>
+      <button class="outline" id="themeToggle">🌗</button>
+    </li>
+  </ul>
+</nav>
