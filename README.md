@@ -45,6 +45,9 @@ Visit: `http://localhost:3000`
 | `/:id/delete`   | POST   | Delete user (if not protected) |
 | `/search?q=...` | GET    | Search users by name/email     |
 
+## 📸 Screenshots
+
+![screenshot](./sc.png)
 ## 🛡️ Notes
 
 - Users with `protected: true` cannot be deleted or updated.
