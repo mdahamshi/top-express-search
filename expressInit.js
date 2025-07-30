@@ -2,6 +2,7 @@
 import express from "express";
 import expressLayouts from "express-ejs-layouts";
 import path from "path";
+import { text } from "stream/consumers";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -11,7 +12,10 @@ export function initExpressApp(app) {
   // Locals
   app.locals.appName = "Top Express";
   // nav links
-  app.locals.links = [{ href: "/", text: "Home" }];
+  app.locals.links = [
+    { href: "/", text: "Home" },
+    { href: "/create", text: "Create User" },
+  ];
 
   // Logger
   app.use((req, res, next) => {
